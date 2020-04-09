@@ -27,8 +27,20 @@ class App extends React.Component {
     )
   }
 
-  toggleCompleted = (itemId) => {
-    console.log('toggle: ', itemId)
+  toggleCompleted = (itemId, name, completed) => {
+    console.log('toggle: ', name, itemId, completed) // confirm item name & id
+
+    this.setState({
+      todoData: this.state.todoData.map(task => {
+        if (itemId === task.id) {
+          return {
+            ...task,
+            completed: !task.completed
+          } //return
+        } // if
+        return task;
+      })
+    })
   }
 
   render() {
