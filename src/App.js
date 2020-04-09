@@ -43,13 +43,21 @@ class App extends React.Component {
     })
   }
 
+  clearCompleted = event => {
+    event.preventDefault();
+
+    this.setState({ // take current state, remove tasks that are not complete and setState with them
+      todoData: this.state.todoData.filter(task => !task.completed)
+    })
+  }
+
   render() {
     // console.log(this.state)
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
         <TodoList data={this.state.todoData} toggleCompleted={this.toggleCompleted}/>
-        <TodoForm addTask={this.addTask} />
+        <TodoForm addTask={this.addTask} clearCompleted={this.clearCompleted} />
       </div>
     );
   }

@@ -6,8 +6,7 @@ const Todo = (props) => {
         <div>
             {/* <div>Todo displays each task onscreen</div> */}
             <div 
-                onClick={() => props.toggleCompleted(props.id, 
-                props.task, props.completed)}
+                onClick={() => props.toggleCompleted(props.id, props.task, props.completed)}
                 className={props.completed === false ? "notComplete" : "complete"}
             >
                 {props.task}
