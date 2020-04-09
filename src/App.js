@@ -1,12 +1,12 @@
 import React from 'react';
-import data from './components/data';
+import todoData from './components/data';
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
 
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {data};
+    this.state = {todoData};
   }
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -16,7 +16,7 @@ class App extends React.Component {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <TodoList data={this.state.data}/>
+        <TodoList data={this.state.todoData}/>
         <TodoForm />
       </div>
     );
