@@ -15,7 +15,15 @@ class TodoList extends React.Component {
                     // console.log(item.task);
                     // console.log(item.id);
                     // console.log(item.completed)
-                    return <Todo task={item.task} id={item.id} completed={item.completed} key={item.id} />
+                    return (
+                        <Todo 
+                            task={item.task} 
+                            id={item.id} 
+                            completed={item.completed} 
+                            key={item.id} 
+                            toggleCompleted={this.props.toggleCompleted}
+                        />
+                    )
                 }
             )
         )
