@@ -1,5 +1,6 @@
 import React from 'react';
 import Todo from './Todo';
+import './TodoList.css';
 
 class TodoList extends React.Component {
     constructor() {
@@ -16,6 +17,7 @@ class TodoList extends React.Component {
                     // console.log(item.id);
                     // console.log(item.completed)
                     return (
+                        <div className='tasklist'>
                         <Todo 
                             task={item.task} 
                             id={item.id} 
@@ -23,6 +25,7 @@ class TodoList extends React.Component {
                             key={item.id} 
                             toggleCompleted={this.props.toggleCompleted}
                         />
+                        </div>
                     )
                 }
             )

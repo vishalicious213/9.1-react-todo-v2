@@ -2,6 +2,7 @@ import React from 'react';
 import todoData from './components/data';
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
+import './App.css';
 
 class App extends React.Component {
   constructor() {
@@ -13,7 +14,7 @@ class App extends React.Component {
   // this component is going to take care of state, and any change handlers you need to work with your state
 
   addTask = (event, item) => {
-    console.log(this.state.todoData);
+    // console.log(this.state.todoData);
     event.preventDefault();
 
     const newTask = {
@@ -28,7 +29,7 @@ class App extends React.Component {
   }
 
   toggleCompleted = (itemId, name, completed) => {
-    console.log('toggle: ', name, itemId, completed) // confirm item name & id
+    // console.log('toggle: ', name, itemId, completed) // confirm item name & id
 
     this.setState({  // get tasks from state and map though them
       todoData: this.state.todoData.map(task => {
@@ -54,10 +55,13 @@ class App extends React.Component {
   render() {
     // console.log(this.state)
     return (
-      <div>
-        <h2>Welcome to your Todo App!</h2>
-        <TodoList data={this.state.todoData} toggleCompleted={this.toggleCompleted}/>
-        <TodoForm addTask={this.addTask} clearCompleted={this.clearCompleted} />
+      <div className='app'>
+        <h2>Welcome to your To-do App!</h2>
+        <div className='checklist'>
+        <p className='buffer'></p>
+          <TodoList data={this.state.todoData} toggleCompleted={this.toggleCompleted}/>
+          <TodoForm addTask={this.addTask} clearCompleted={this.clearCompleted} />
+        </div>
       </div>
     );
   }

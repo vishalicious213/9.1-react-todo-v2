@@ -1,4 +1,5 @@
 import React from 'react';
+import './TodoForm.css';
 
 class TodoForm extends React.Component {
     constructor() {
@@ -24,7 +25,7 @@ class TodoForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='todoForm'>
                 <form onSubmit={this.submitTask}>
                     <input type='text' name='newTask' 
                         value={this.state.newTask} 

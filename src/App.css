@@ -1,0 +1,25 @@
+.app {
+    /* border: 1px solid red; */
+    background: #e67244;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.75rem;
+    font-family: Verdana, sans-serif;
+    color: whitesmoke;
+    text-shadow: 2px 2px crimson;
+}
+
+.checklist {
+    /* border: 1px solid orange; */
+    min-height: 70vh;
+    background-image: url('./img/checklist.png');
+    background-repeat: no-repeat;
+    background-position: center center;  
+    background-size: contain;
+}
+
+.buffer {
+    margin-top: 2rem;
+}
