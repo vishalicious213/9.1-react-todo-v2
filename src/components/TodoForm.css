@@ -1,0 +1,27 @@
+.todoForm {
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    border: 1.5px solid gray;
+    border-radius: .5rem;
+}
+
+button {
+    border: 1.5px solid gainsboro;
+    border-radius: 1rem;
+    color: whitesmoke;
+    background-color: #e64944;
+    margin: .25rem;
+    padding-left: .75rem;
+    padding-right: .75rem;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: crimson;
+}
