@@ -30,4 +30,4 @@ class TodoList extends React.Component {
 
 export default TodoList;
 
-{/* <TodoList /> receives your Todos array and iterates over the list generating a new <Todo /> for each element in the array. */}
+/* <TodoList /> receives your Todos array and iterates over the list generating a new <Todo /> for each element in the array. */
