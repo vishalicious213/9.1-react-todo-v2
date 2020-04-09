@@ -30,15 +30,15 @@ class App extends React.Component {
   toggleCompleted = (itemId, name, completed) => {
     console.log('toggle: ', name, itemId, completed) // confirm item name & id
 
-    this.setState({
+    this.setState({  // get tasks from state and map though them
       todoData: this.state.todoData.map(task => {
-        if (itemId === task.id) {
+        if (itemId === task.id) { // if sent id = id in state
           return {
-            ...task,
-            completed: !task.completed
-          } //return
-        } // if
-        return task;
+            ...task, // get individual matching task
+            completed: !task.completed // toggle its completed status in state
+          }
+        }
+        return task; // else (if id doesn't match) return item
       })
     })
   }
