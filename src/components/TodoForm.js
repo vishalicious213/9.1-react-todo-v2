@@ -17,10 +17,12 @@ class TodoForm extends React.Component {
     submitTask = event => {
         event.preventDefault(); // stop refresh
 
-        this.props.addTask(event, this.state.newTask);
-            // gets addTask from App and appends newTask to state in App
-        this.setState({ newTask: '' });
-            // clears input so new task can be entered
+        if (this.state.newTask !== '') { // stop adding blank items to list
+            this.props.addTask(event, this.state.newTask);
+                // gets addTask from App and appends newTask to state in App
+            this.setState({ newTask: '' });
+                // clears input so new task can be entered
+        }
     }
 
     render() {
