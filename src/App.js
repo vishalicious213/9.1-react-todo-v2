@@ -8,8 +8,8 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      dataset: todoData,
-      tasks: this.dataset
+      dataset: todoData, // holds to-do list, shopping list or notes
+      tasks: this.dataset // toggles between datasets
       };
   }
   // you will need a place to store your state in this component.
