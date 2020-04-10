@@ -28,7 +28,7 @@ class App extends React.Component {
     };
 
     this.setState(
-      {tasks: [...this.state.dataset, newTask]},
+      {dataset: [...this.state.dataset, newTask]},
     )
   }
 
@@ -36,7 +36,7 @@ class App extends React.Component {
     // console.log('toggle: ', name, itemId, completed) // confirm item name & id
 
     this.setState({  // get tasks from state and map though them
-      tasks: this.state.dataset.map(task => {
+      dataset: this.state.dataset.map(task => {
         if (itemId === task.id) { // if sent id = id in state
           return {
             ...task, // get individual matching task
@@ -52,12 +52,12 @@ class App extends React.Component {
     event.preventDefault();
 
     this.setState({ // take current state, remove tasks that are not complete and setState with them
-      tasks: this.state.dataset.filter(task => !task.completed)
+      dataset: this.state.dataset.filter(task => !task.completed)
     })
   }
 
   toggleMenu = (choice) => {
-    console.log('Menu Toggled', choice);
+    // console.log('Menu Toggled', choice);
     if (choice === 'todoData') {this.setState({dataset: todoData})};
     if (choice === 'shoppingData') {this.setState({dataset: shoppingData})};
     if (choice === 'notesData') {this.setState({dataset: notesData})};

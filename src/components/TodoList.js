@@ -17,12 +17,11 @@ class TodoList extends React.Component {
                     // console.log(item.id);
                     // console.log(item.completed)
                     return (
-                        <div className='tasklist'>
+                        <div className='tasklist' key={item.id}>
                         <Todo 
                             task={item.task} 
                             id={item.id} 
                             completed={item.completed} 
-                            key={item.id} 
                             toggleCompleted={this.props.toggleCompleted}
                         />
                         </div>
