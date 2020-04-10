@@ -2,6 +2,7 @@ import React from 'react';
 import todoData, { shoppingData, notesData } from './components/data';
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
+import Menu from './components/Menu';
 import './App.css';
 
 class App extends React.Component {
@@ -60,6 +61,7 @@ class App extends React.Component {
     return (
       <div className='app'>
         <h2>Welcome to your To-do App!</h2>
+        <Menu />
         <div className='checklist'>
         <p className='buffer'></p>
           <TodoList data={this.state.dataset} toggleCompleted={this.toggleCompleted}/>

@@ -1,0 +1,15 @@
+.menu {
+    display: flex;
+    justify-content: center;
+}
+
+.menuButton {
+    font-size: 1rem;
+    border-radius: .75rem;
+    background-color: crimson;
+}
+
+.menuButton:hover {
+    color: white;
+    background-color: #e64944;
+}
