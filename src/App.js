@@ -1,5 +1,5 @@
 import React from 'react';
-import todoData from './components/data';
+import todoData, { shoppingData, notesData } from './components/data';
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
 import './App.css';
@@ -7,7 +7,10 @@ import './App.css';
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {todoData};
+    this.state = {
+      dataset: todoData,
+      tasks: this.dataset
+      };
   }
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -24,7 +27,7 @@ class App extends React.Component {
     };
 
     this.setState(
-      {todoData: [...this.state.todoData, newTask]},
+      {tasks: [...this.state.dataset, newTask]},
     )
   }
 
@@ -32,7 +35,7 @@ class App extends React.Component {
     // console.log('toggle: ', name, itemId, completed) // confirm item name & id
 
     this.setState({  // get tasks from state and map though them
-      todoData: this.state.todoData.map(task => {
+      tasks: this.state.dataset.map(task => {
         if (itemId === task.id) { // if sent id = id in state
           return {
             ...task, // get individual matching task
@@ -48,7 +51,7 @@ class App extends React.Component {
     event.preventDefault();
 
     this.setState({ // take current state, remove tasks that are not complete and setState with them
-      todoData: this.state.todoData.filter(task => !task.completed)
+      tasks: this.state.dataset.filter(task => !task.completed)
     })
   }
 
@@ -59,7 +62,7 @@ class App extends React.Component {
         <h2>Welcome to your To-do App!</h2>
         <div className='checklist'>
         <p className='buffer'></p>
-          <TodoList data={this.state.todoData} toggleCompleted={this.toggleCompleted}/>
+          <TodoList data={this.state.dataset} toggleCompleted={this.toggleCompleted}/>
           <TodoForm addTask={this.addTask} clearCompleted={this.clearCompleted} />
         </div>
       </div>
