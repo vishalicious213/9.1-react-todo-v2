@@ -56,12 +56,16 @@ class App extends React.Component {
     })
   }
 
+  toggleMenu = () => {
+    console.log('Menu Toggled')
+  }
+
   render() {
     // console.log(this.state)
     return (
       <div className='app'>
         <h2>Welcome to your To-do App!</h2>
-        <Menu />
+        <Menu toggleMenu={this.toggleMenu} />
         <div className='checklist'>
         <p className='buffer'></p>
           <TodoList data={this.state.dataset} toggleCompleted={this.toggleCompleted}/>

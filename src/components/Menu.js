@@ -1,12 +1,20 @@
 import React from 'react';
 import './Menu.css';
 
-const Menu = () => {
+const Menu = (props) => {
     return (
         <div className='menu'>
-            <button className='menuButton'>To Do List</button>
-            <button className='menuButton'>Shopping List</button>
-            <button className='menuButton'>Notes</button>
+            <button className='menuButton' onClick={() => props.toggleMenu()}>
+                To Do List
+            </button>
+            
+            <button className='menuButton' onClick={() => props.toggleMenu()}>
+                Shopping List
+            </button>
+
+            <button className='menuButton' onClick={() => props.toggleMenu()}>
+                Notes
+            </button>
         </div>
     )
 }
