@@ -56,8 +56,11 @@ class App extends React.Component {
     })
   }
 
-  toggleMenu = () => {
-    console.log('Menu Toggled')
+  toggleMenu = (choice) => {
+    console.log('Menu Toggled', choice);
+    if (choice === 'todoData') {this.setState({dataset: todoData})};
+    if (choice === 'shoppingData') {this.setState({dataset: shoppingData})};
+    if (choice === 'notesData') {this.setState({dataset: notesData})};
   }
 
   render() {
@@ -65,7 +68,7 @@ class App extends React.Component {
     return (
       <div className='app'>
         <h2>Welcome to your To-do App!</h2>
-        <Menu toggleMenu={this.toggleMenu} />
+        <Menu toggleMenu={this.toggleMenu} todo='todoData' shop='shoppingData' note='notesData' />
         <div className='checklist'>
         <p className='buffer'></p>
           <TodoList data={this.state.dataset} toggleCompleted={this.toggleCompleted}/>
